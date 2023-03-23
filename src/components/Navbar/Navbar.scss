@@ -1,0 +1,25 @@
+@use "../../sass/variable" as v;
+
+.navbar {
+  height: 80%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  & ul {
+    display: flex;
+    gap: 20px;
+    height: 90%;
+    align-items: center;
+    justify-content: center;
+    & li {
+      color: v.$light-orange;
+      & a {
+        color: v.$light-orange;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+    }
+  }
+}

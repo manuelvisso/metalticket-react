@@ -1,0 +1,13 @@
+@use "./variable" as v;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: v.$font;
+  color: v.$white;
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}

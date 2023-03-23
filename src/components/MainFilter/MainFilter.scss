@@ -1,0 +1,61 @@
+@use "../../sass/variable" as v;
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 50px;
+  position: relative;
+  &__selection {
+    width: 80%;
+    height: 100px;
+    background-color: #10101095;
+    border: 1px solid v.$gray;
+    border-radius: 35px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    top: -50px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    &__g {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    &__title {
+      color: v.$light-orange;
+      font-size: v.$font-l;
+      font-weight: 500;
+      text-align: center;
+    }
+    &__list {
+      width: 150px;
+      height: 40px;
+      border-radius: 10px;
+      text-align: center;
+      background-color: v.$white;
+      color: v.$black;
+      font-size: v.$font-m;
+      & option {
+        color: v.$black;
+      }
+    }
+  }
+  &__cleaner {
+    display: flex;
+    align-items: flex-end;
+    &__btn {
+      background-color: transparent;
+      border: none;
+    }
+    &__text {
+      color: v.$light-orange;
+      font-size: v.$font-m;
+      font-weight: 400;
+      cursor: pointer;
+    }
+  }
+}
