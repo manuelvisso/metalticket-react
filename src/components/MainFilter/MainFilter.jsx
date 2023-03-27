@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import SelectionList from "./SelectionList";
 
 import { genreList, cityList, placeList } from "../../utils";
@@ -10,14 +10,15 @@ import "../MainFilter/MainFilter.scss";
 const MainFilter = () => {
   const [filterValue, setFilterValue] = useState("");
 
-  const [data, setData] = useState(concerts);
+  const data = concerts;
 
   const filteredData = data.filter((obj) =>
-    filterValue ? obj.artist === filterValue : true
+    filterValue ? obj.genre === filterValue : true
   );
 
   const handleFilterChange = (e) => {
     setFilterValue(e.value);
+    console.log(e.value);
   };
 
   console.log(filteredData.map((obj) => obj.artist));
@@ -62,3 +63,50 @@ const MainFilter = () => {
 };
 
 export default MainFilter;
+
+// import React, { useState } from "react";
+
+// const MyComponent = () => {
+//   const [filterValue, setFilterValue] = useState(""); // estado del valor seleccionado en el select
+//   const data = [
+//     { id: 1, name: "John" },
+//     { id: 2, name: "Jane" },
+//     { id: 3, name: "Bob" },
+//     { id: 4, name: "Alice" },
+//   ];
+
+//   // función que maneja el cambio en el valor seleccionado del select
+//   const handleFilterChange = (event) => {
+//     setFilterValue(event.target.value); // establece el valor seleccionado en el estado
+//   };
+
+//   // función que filtra los objetos según el valor seleccionado en el select
+//   const filteredData = data.filter((obj) =>
+//     filterValue ? obj.name === filterValue : true
+//   );
+
+//   return (
+//     <div>
+//       <label htmlFor="filter-select">Filtrar por nombre:</label>
+//       <select
+//         id="filter-select"
+//         value={filterValue}
+//         onChange={handleFilterChange}
+//       >
+//         <option value="">Todos</option>
+//         <option value="John">John</option>
+//         <option value="Jane">Jane</option>
+//         <option value="Bob">Bob</option>
+//         <option value="Alice">Alice</option>
+//       </select>
+
+//       <ul>
+//         {filteredData.map((obj) => (
+//           <li key={obj.id}>{obj.name}</li>
+//         ))}
+//       </ul>
+//     </div>
+//   );
+// };
+
+// export default MyComponent;

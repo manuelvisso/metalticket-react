@@ -14,7 +14,6 @@ const SelectionList = ({ label, name, optionList, defaultValue, onChange }) => {
         options={optionList}
         defaultValue={defaultValue}
         onChange={onChange}
-        value=""
       />
     </div>
   );
