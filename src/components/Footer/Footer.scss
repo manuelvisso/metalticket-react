@@ -1,0 +1,37 @@
+@use "../../sass/variable" as v;
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  &__link {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 50px;
+    & * {
+      font-size: v.$font-m;
+      color: v.$white;
+    }
+  }
+  &__rrss {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 0 50px;
+    & div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      padding: 10px;
+    }
+    & * {
+      font-size: v.$font-m;
+      color: v.$white;
+    }
+  }
+}

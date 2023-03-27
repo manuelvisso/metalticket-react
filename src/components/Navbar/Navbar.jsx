@@ -1,4 +1,5 @@
 import React from "react";
+import { FaShoppingCart } from "react-icons/fa";
 import "../Navbar/Navbar.scss";
 
 const Navbar = () => {
@@ -14,7 +15,9 @@ const Navbar = () => {
         <li>
           <a>Iniciar Sesión</a>
         </li>
-        <li>Carrito</li>
+        <li>
+          <FaShoppingCart />
+        </li>
       </ul>
     </div>
   );

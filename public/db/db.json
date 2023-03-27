@@ -1,0 +1,223 @@
+[
+  {
+    "id": 1,
+    "artist": "Arch Enemy",
+    "date": "21/11/2022",
+    "genre": "Death Metal",
+    "city": "Buenos Aires",
+    "place": "Teatro Flores",
+    "price": 5000,
+    "favorite": true,
+    "img": "./assets/event-img/arch-enemy.jpg"
+  },
+  {
+    "id": 2,
+    "artist": "Opeth",
+    "date": "13/02/2023",
+    "genre": "Otros",
+    "city": "Buenos Aires",
+    "place": "Teatro Flores",
+    "price": 6000,
+    "favorite": true,
+    "img": "./assets/event-img/Opeth2016d.jpg"
+  },
+  {
+    "id": 3,
+    "artist": "Epica",
+    "date": "22/11/2022",
+    "genre": "Symphonic Metal",
+    "city": "Buenos Aires",
+    "place": "Teatro Flores",
+    "price": 4000,
+    "favorite": true,
+    "img": "./assets/event-img/epica.jpg"
+  },
+  {
+    "id": 4,
+    "artist": "Slipknot",
+    "date": "08/12/2022",
+    "genre": "Alternativo",
+    "city": "Buenos Aires",
+    "place": "River Plate",
+    "price": 7000,
+    "favorite": true,
+    "img": "./assets/event-img/slipknot.jpg"
+  },
+  {
+    "id": 5,
+    "artist": "Judas Priest",
+    "date": "09/12/2022",
+    "genre": "Heavy Metal",
+    "city": "Buenos Aires",
+    "place": "River Plate",
+    "price": 6500,
+    "favorite": true,
+    "img": "./assets/event-img/judas.jpg"
+  },
+  {
+    "id": 6,
+    "artist": "Behemoth",
+    "date": "21/11/2022",
+    "genre": "Black Metal",
+    "city": "Buenos Aires",
+    "place": "Unickub",
+    "price": 3000,
+    "favorite": false,
+    "img": "./assets/event-img/behemoth.jpg"
+  },
+  {
+    "id": 7,
+    "artist": "Carcass",
+    "date": "06/06/2023",
+    "genre": "Grindcore, Death Metal",
+    "city": "Buenos Aires",
+    "place": "Uniclub",
+    "price": 3500,
+    "favorite": false,
+    "img": "./assets/event-img/carcass.jpeg"
+  },
+  {
+    "id": 8,
+    "artist": "Rammstein",
+    "date": "08/12/2022",
+    "genre": "Industrial",
+    "city": "Córdoba",
+    "place": "Fernet Club",
+    "price": 8000,
+    "favorite": true,
+    "img": "./assets/event-img/rammstein.jpg"
+  },
+  {
+    "id": 9,
+    "artist": "AC / DC",
+    "date": "11/02/2023",
+    "genre": "Heavy Metal",
+    "city": "Buenos Aires",
+    "place": "River Plate",
+    "price": 10000,
+    "favorite": true,
+    "img": "./assets/event-img/acdc.jpg"
+  },
+  {
+    "id": 10,
+    "artist": "Kreator",
+    "date": "26/04/2023",
+    "genre": "Thrash Metal",
+    "city": "Buenos Aires",
+    "place": "Luna Park",
+    "price": 6000,
+    "favorite": false,
+    "img": "./assets/event-img/kreator.jpg"
+  },
+  {
+    "id": 11,
+    "artist": "Testament",
+    "date": "26/04/2023",
+    "genre": "Thrash Metal",
+    "city": "Buenos Aires",
+    "place": "Luna Park",
+    "price": 6000,
+    "favorite": false,
+    "img": "./assets/event-img/testament.jpg"
+  },
+  {
+    "id": 12,
+    "artist": "Kreator",
+    "date": "26/04/2023",
+    "genre": "Thrash Metal",
+    "city": "Córdoba",
+    "place": "Fernet Club",
+    "price": 6000,
+    "favorite": false,
+    "img": "./assets/event-img/kreator.jpg"
+  },
+  {
+    "id": 13,
+    "artist": "Testament",
+    "date": "26/04/2023",
+    "genre": "Thrash Metal",
+    "city": "Córdoba",
+    "place": "Fernet Club",
+    "price": 6000,
+    "favorite": false,
+    "img": "./assets/event-img/testament.jpg"
+  },
+  {
+    "id": 14,
+    "artist": "Rammstein",
+    "date": "10/12/2022",
+    "genre": "Industrial",
+    "city": "Buenos Aires",
+    "place": "Luna Park",
+    "price": 8000,
+    "favorite": true,
+    "img": "./assets/event-img/rammstein.jpg"
+  },
+  {
+    "id": 15,
+    "artist": "AC / DC",
+    "date": "12/02/2023",
+    "genre": "Heavy Metal",
+    "city": "Córdoba",
+    "place": "Fernet Club",
+    "price": 10000,
+    "favorite": true,
+    "img": "./assets/event-img/acdc.jpg"
+  },
+
+  {
+    "id": 16,
+    "artist": "Carcass",
+    "date": "07/06/2023",
+    "genre": "Grindcore, Death Metal",
+    "city": "Córdoba",
+    "place": "Fernet Club",
+    "price": 3500,
+    "favorite": false,
+    "img": "./assets/event-img/carcass.jpeg"
+  },
+  {
+    "id": 17,
+    "artist": "Ironmaiden",
+    "date": "12/02/2023",
+    "genre": "Heavy Metal",
+    "city": "Buenos Aires",
+    "place": "Luna Park",
+    "price": 6000,
+    "favorite": false,
+    "img": "./assets/event-img/ironmaiden.jpg"
+  },
+  {
+    "id": 18,
+    "artist": "Disturbed",
+    "date": "04/06/2023",
+    "genre": "Nu Metal",
+    "city": "Buenos Aires",
+    "place": "Uniclub",
+    "price": 4000,
+    "favorite": false,
+    "img": "./assets/event-img/disturbed.jpeg"
+  },
+  {
+    "id": 19,
+    "artist": "System of a Down",
+    "date": "25/03/2023",
+    "genre": "Alternativo, Nu Metal",
+    "city": "Buenos Aires",
+    "place": "Teatro Flores",
+    "price": 7000,
+    "favorite": false,
+    "img": "./assets/event-img/soad.jpg"
+  },
+  {
+    "id": 20,
+    "artist": "System of a Down",
+    "date": "23/03/2023",
+    "genre": "Alternativo, Nu Metal",
+    "city": "Córdoba",
+    "place": "Fernet Club",
+    "price": 6000,
+    "favorite": false,
+    "img": "./assets/event-img/soad.jpg"
+  }
+]

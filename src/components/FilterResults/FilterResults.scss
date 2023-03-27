@@ -8,6 +8,7 @@
   padding: 100px 50px;
   &__title {
     font-size: v.$font-xl;
+    color: v.$white;
   }
   &__cards {
     display: flex;
