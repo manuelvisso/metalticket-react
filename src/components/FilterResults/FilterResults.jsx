@@ -1,18 +1,25 @@
 import React from "react";
-import { useQuery } from "@tanstack/react-query";
-import { getConcerts } from "../../api/concertsApi";
+import TicketCard from "./TicketCard";
+import { concerts } from "../../data";
+
 import "../FilterResults/FilterResults.scss";
 
 const FilterResults = () => {
-  const { data: concerts } = useQuery({
-    queryKey: ["concerts"],
-    queryFn: getConcerts,
-  });
-
   return (
     <div className="filter__results">
       <h2 className="filter__results__title">Eventos</h2>
-      <div className="filter__results__cards"></div>
+      <div className="filter__results__cards">
+        {concerts.map((concert) => (
+          <TicketCard
+            key={concert.id}
+            img={concert.img}
+            artist={concert.artist}
+            city={concert.city}
+            date={concert.date}
+            price={concert.price}
+          />
+        ))}
+      </div>
     </div>
   );
 };

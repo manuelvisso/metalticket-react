@@ -1,14 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import SelectionList from "./SelectionList";
 
 import { genreList, cityList, placeList } from "../../utils";
 
+import { concerts } from "../../data";
+
 import "../MainFilter/MainFilter.scss";
 
 const MainFilter = () => {
-  const handleSelectChange = (e) => {
-    return console.log(e.value);
+  const [filterValue, setFilterValue] = useState("");
+
+  const [data, setData] = useState(concerts);
+
+  const filteredData = data.filter((obj) =>
+    filterValue ? obj.artist === filterValue : true
+  );
+
+  const handleFilterChange = (e) => {
+    setFilterValue(e.value);
   };
+
+  console.log(filteredData.map((obj) => obj.artist));
 
   return (
     <div className="filter">
@@ -19,7 +31,8 @@ const MainFilter = () => {
           id="genero"
           optionList={genreList}
           defaultValue={genreList[0]}
-          onChange={handleSelectChange}
+          onChange={handleFilterChange}
+          value={filterValue}
         />
         <SelectionList
           label="Ciudad"
@@ -27,7 +40,7 @@ const MainFilter = () => {
           id="ciudad"
           optionList={cityList}
           defaultValue={cityList[0]}
-          onChange={handleSelectChange}
+          onChange={""}
         />
         <SelectionList
           label="Recinto"
@@ -35,7 +48,7 @@ const MainFilter = () => {
           id="recinto"
           optionList={placeList}
           defaultValue={placeList[0]}
-          onChange={handleSelectChange}
+          onChange={""}
         />
 
         <div className="filter__cleaner">
