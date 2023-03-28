@@ -1,2 +1,2 @@
 export * from "./filterOptions";
-export * from "./applyFilters";
+export * from "./applyFilterToData";

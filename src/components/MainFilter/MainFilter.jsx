@@ -1,28 +1,21 @@
 import React, { useState } from "react";
 import SelectionList from "./SelectionList";
+import FilterResults from "../FilterResults/FilterResults";
 import { genreList, cityList, placeList } from "../../utils";
-import { applyFilters } from "../../utils";
-import { concerts } from "../../data";
+import { applyFilterToData } from "../../utils";
+import { concertsData } from "../../data";
 
 import "../MainFilter/MainFilter.scss";
-import FilterResults from "../FilterResults/FilterResults";
 
 const MainFilter = () => {
   const [filterValueGenre, setFilterValueGenre] = useState("");
   const [filterValueCity, setFilterValueCity] = useState("");
   const [filterValuePlace, setFilterValuePlace] = useState("");
 
-  const events = concerts;
+  const concerts = concertsData;
 
-  // const filteredEvents = events.filter(
-  //   (event) =>
-  //     event.genre.includes(filterValueGenre) &&
-  //     event.city.includes(filterValueCity) &&
-  //     event.place.includes(filterValuePlace)
-  // );
-
-  const applyFilter = applyFilters(
-    events,
+  const filteredData = applyFilterToData(
+    concerts,
     filterValueGenre,
     filterValueCity,
     filterValuePlace
@@ -30,22 +23,20 @@ const MainFilter = () => {
 
   const handleFilterChangeGenre = (e) => {
     setFilterValueGenre(e.value);
-    console.log(e.value);
   };
   const handleFilterChangeCity = (e) => {
     setFilterValueCity(e.value);
-    console.log(e.value);
   };
   const handleFilterChangePlace = (e) => {
     setFilterValuePlace(e.value);
-    console.log(e.value);
   };
 
   console.log(
     "map ==>",
-    applyFilter.map((obj) => obj.artist)
+    filteredData.map((obj) => obj.artist)
   );
-  console.log("array", applyFilter);
+
+  console.log("array", filteredData);
 
   return (
     <div className="filter">
@@ -84,7 +75,7 @@ const MainFilter = () => {
           </button>
         </div>
       </div>
-      <FilterResults array={applyFilter} />
+      <FilterResults filteredData={filteredData} />
     </div>
   );
 };

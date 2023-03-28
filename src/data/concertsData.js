@@ -1,4 +1,4 @@
-export const concerts = [
+export const concertsData = [
   {
     id: 1,
     artist: "Arch Enemy",
@@ -41,7 +41,7 @@ export const concerts = [
     place: "River Plate",
     price: 7000,
     favorite: true,
-    img: "https://res.cloudinary.com/dbim0bxzc/image/upload/v1679854779/metalticket/kreator_zuetiy.jpg",
+    img: "https://res.cloudinary.com/dbim0bxzc/image/upload/v1679854779/metalticket/slipknot_tek1mq.jpg",
   },
   {
     id: 5,
