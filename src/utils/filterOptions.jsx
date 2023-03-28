@@ -1,5 +1,5 @@
 export const genreList = [
-  { value: "Todos", label: "Todos" },
+  { value: "", label: "Todos" },
   { value: "Alternativo", label: "Alternativo" },
   { value: "Black Metal", label: "Black Metal" },
   { value: "Death Metal", label: "Death Metal" },
@@ -15,14 +15,14 @@ export const genreList = [
 ];
 
 export const cityList = [
-  { value: "Todos", label: "Todos" },
+  { value: "", label: "Todos" },
   { value: "Buenos Aires", label: "Buenos Aires" },
   { value: "Córdoba", label: "Córdoba" },
   { value: "Rosario", label: "Rosario" },
 ];
 
 export const placeList = [
-  { value: "Todos", label: "Todos" },
+  { value: "", label: "Todos" },
   { value: "CC de Rosario", label: "CC de Rosario" },
   { value: "Fernet Club", label: "Fernet Club" },
   { value: "Luna Park", label: "Luna Park" },

@@ -24,19 +24,16 @@ const MainFilter = () => {
   const handleFilterChangeGenre = (e) => {
     setFilterValueGenre(e.value);
   };
+
   const handleFilterChangeCity = (e) => {
     setFilterValueCity(e.value);
   };
+
   const handleFilterChangePlace = (e) => {
     setFilterValuePlace(e.value);
   };
 
-  console.log(
-    "map ==>",
-    filteredData.map((obj) => obj.artist)
-  );
-
-  console.log("array", filteredData);
+  console.log("filteredData ==>", filteredData);
 
   return (
     <div className="filter">
