@@ -13,7 +13,7 @@ function Layout() {
       <Header />
       <Hero />
       <MainFilter />
-      <FilterResults />
+      {/* <FilterResults /> */}
       <Footer />
     </div>
   );
