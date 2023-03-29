@@ -11,6 +11,7 @@ const MainFilter = () => {
   const [filterValueGenre, setFilterValueGenre] = useState("");
   const [filterValueCity, setFilterValueCity] = useState("");
   const [filterValuePlace, setFilterValuePlace] = useState("");
+  const [key, setKey] = useState(0);
 
   const concerts = concertsData;
 
@@ -33,7 +34,16 @@ const MainFilter = () => {
     setFilterValuePlace(e.value);
   };
 
+  const resetFilteredData = () => {
+    setFilterValueGenre("");
+    setFilterValueCity("");
+    setFilterValuePlace("");
+    setKey(key + 3);
+  };
+
   console.log("filteredData ==>", filteredData);
+
+  console.log(filterValueGenre);
 
   return (
     <div className="filter">
@@ -46,6 +56,7 @@ const MainFilter = () => {
           defaultValue={genreList[0]}
           onChange={handleFilterChangeGenre}
           value={filterValueGenre}
+          key={key + 1}
         />
         <SelectionList
           label="Ciudad"
@@ -55,6 +66,7 @@ const MainFilter = () => {
           defaultValue={cityList[0]}
           onChange={handleFilterChangeCity}
           value={filterValueCity}
+          key={key + 2}
         />
         <SelectionList
           label="Recinto"
@@ -64,10 +76,15 @@ const MainFilter = () => {
           defaultValue={placeList[0]}
           onChange={handleFilterChangePlace}
           value={filterValuePlace}
+          key={key + 3}
         />
 
         <div className="filter__cleaner">
-          <button className="filter__cleaner__btn" type="reset">
+          <button
+            className="filter__cleaner__btn"
+            type="reset"
+            onClick={resetFilteredData}
+          >
             <p className="filter__cleaner__text">Ver todos</p>
           </button>
         </div>

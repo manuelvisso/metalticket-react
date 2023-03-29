@@ -4,8 +4,6 @@ import TicketCard from "./TicketCard";
 import "../FilterResults/FilterResults.scss";
 
 const FilterResults = ({ filteredData }) => {
-  console.log("filter==> ", filteredData);
-
   return (
     <div className="filter__results">
       <h2 className="filter__results__title">Eventos</h2>
