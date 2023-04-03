@@ -16,7 +16,7 @@ const Navbar = () => {
           <a>Iniciar Sesión</a>
         </li>
         <li>
-          <FaShoppingCart />
+          <FaShoppingCart size="20px" />
         </li>
       </ul>
     </div>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SelectionList from "./SelectionList";
-import FilterResults from "../FilterResults/FilterResults";
+import FilterResults from "./FilterResults/FilterResults";
 import { genreList, cityList, placeList } from "../../utils";
 import { applyFilterToData } from "../../utils";
 import { concertsData } from "../../data";
@@ -22,18 +22,6 @@ const MainFilter = () => {
     filterValuePlace
   );
 
-  const handleFilterChangeGenre = (e) => {
-    setFilterValueGenre(e.value);
-  };
-
-  const handleFilterChangeCity = (e) => {
-    setFilterValueCity(e.value);
-  };
-
-  const handleFilterChangePlace = (e) => {
-    setFilterValuePlace(e.value);
-  };
-
   const resetFilteredData = () => {
     setFilterValueGenre("");
     setFilterValueCity("");
@@ -54,7 +42,7 @@ const MainFilter = () => {
           id="genero"
           optionList={genreList}
           defaultValue={genreList[0]}
-          onChange={handleFilterChangeGenre}
+          onChange={(e) => setFilterValueGenre(e.value)}
           value={filterValueGenre}
           key={key + 1}
         />
@@ -64,7 +52,7 @@ const MainFilter = () => {
           id="ciudad"
           optionList={cityList}
           defaultValue={cityList[0]}
-          onChange={handleFilterChangeCity}
+          onChange={(e) => setFilterValueCity(e.value)}
           value={filterValueCity}
           key={key + 2}
         />
@@ -74,7 +62,7 @@ const MainFilter = () => {
           id="recinto"
           optionList={placeList}
           defaultValue={placeList[0]}
-          onChange={handleFilterChangePlace}
+          onChange={(e) => setFilterValuePlace(e.value)}
           value={filterValuePlace}
           key={key + 3}
         />

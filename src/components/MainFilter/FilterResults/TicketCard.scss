@@ -1,4 +1,4 @@
-@use "../../sass/variable" as v;
+@use "../../../sass/variable" as v;
 
 .ticketCard {
   display: flex;
@@ -44,7 +44,7 @@
     &__btn {
       height: 10%;
       width: 100%;
-      background-color: v.$dark-orange;
+      background-color: v.$gray;
       border: none;
       color: v.$white;
       font-size: v.$font-m;
@@ -54,7 +54,7 @@
       -moz-box-shadow: 0px 0px 10px 0px v.$black;
       transition: all 0.2s ease-in-out;
       &:hover {
-        background-color: v.$gray;
+        background-color: v.$dark-orange;
       }
     }
   }

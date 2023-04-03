@@ -1,0 +1,126 @@
+@use "../../sass/variable" as v;
+
+.cart {
+  width: 400px;
+  height: 100vh;
+  position: absolute;
+  z-index: 9999;
+  top: 0px;
+  right: 0;
+  background-color: #101010d9;
+  border: 1px solid v.$white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  &__btn__close {
+    all: unset;
+    cursor: pointer;
+  }
+  &__title {
+    text-align: center;
+    font-size: v.$font-l;
+  }
+  &__delete__btn {
+    all: unset;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+  }
+  &__render__container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    overflow: auto;
+  }
+  &__item {
+    width: 90%;
+    height: 120px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid v.$white;
+    padding-bottom: 15px;
+    position: relative;
+    &__img {
+      width: 100px;
+      height: 100px;
+      & img {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        border: 1px solid var(--ocre);
+        object-fit: cover;
+      }
+    }
+    &__data {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    &__artist,
+    &__price {
+      font-size: v.$font-m;
+      font-weight: 500;
+    }
+    &__city,
+    &__date {
+      font-size: v.$font-m;
+    }
+  }
+  &__qty__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  &__qty__minus,
+  &__qty__plus {
+    all: unset;
+    cursor: pointer;
+  }
+
+  &__pricing {
+    &__container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+      margin: 0 auto;
+    }
+    &__titles,
+    &__amount {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    &__amount {
+      text-align: right;
+    }
+  }
+  &__button__container {
+    display: flex;
+    justify-content: center;
+    & button {
+      width: 150px;
+      height: 35px;
+      background-color: v.$gray;
+      border-radius: 10px;
+      border: none;
+      font-family: "Ubuntu", sans-serif;
+      cursor: pointer;
+      box-shadow: 1px 1px 24px 5px v.$black;
+      -webkit-box-shadow: 1px 1px 24px 5px v.$black;
+      -moz-box-shadow: 1px 1px 24px 5px v.$black;
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        transform: translateY(2px);
+        background-color: v.$light-orange;
+      }
+    }
+  }
+}
