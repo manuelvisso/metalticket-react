@@ -221,3 +221,5 @@ export const concertsData = [
     img: "https://res.cloudinary.com/dbim0bxzc/image/upload/v1679854780/metalticket/soad_f61w2u.jpg",
   },
 ];
+
+export const TotalConcertsData = concertsData.length;

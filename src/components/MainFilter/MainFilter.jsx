@@ -4,6 +4,7 @@ import FilterResults from "./FilterResults/FilterResults";
 import { genreList, cityList, placeList } from "../../utils";
 import { applyFilterToData } from "../../utils";
 import { concertsData } from "../../data";
+import { useSelector } from "react-redux";
 
 import "../MainFilter/MainFilter.scss";
 
@@ -13,7 +14,7 @@ const MainFilter = () => {
   const [filterValuePlace, setFilterValuePlace] = useState("");
   const [key, setKey] = useState(0);
 
-  const concerts = concertsData;
+  const concerts = useSelector((state) => state.concerts.concerts);
 
   const filteredData = applyFilterToData(
     concerts,
