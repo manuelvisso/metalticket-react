@@ -9,7 +9,7 @@ const middleware = [thunk]; //redux no permite hacer funciones asincronas.. por 
 export const store = createStore(
   rootReducer,
   initialState,
-  applyMiddleware(...middleware)
+  applyMiddleware(thunk)
 );
 
 export const persistor = persistStore(store);

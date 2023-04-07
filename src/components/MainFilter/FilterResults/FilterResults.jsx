@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { useSelector } from "react-redux";
 import TicketCard from "./TicketCard";
 
 import "../FilterResults/FilterResults.scss";
-import { useSelector } from "react-redux";
 
 const FilterResults = () => {
   const filterSelected = useSelector((state) => state.filter.filterSelected);
@@ -10,12 +10,13 @@ const FilterResults = () => {
   let concerts = useSelector((state) => state.concerts.concerts);
 
   if (filterSelected) {
-    concerts = concerts.filter((concert) =>
-      concert.genre.includes(filterSelected)
+    concerts = concerts.filter(
+      (concert) =>
+        concert.genre.includes(filterSelected[0]) &&
+        concert.city.includes(filterSelected[1]) &&
+        concert.place.includes(filterSelected[2])
     );
   }
-
-  // useEffect(() => console.log(concerts), [concerts]);
 
   return (
     <div className="filter__results">
