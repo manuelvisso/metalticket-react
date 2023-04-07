@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useDebugValue, useState } from "react";
 import SelectionList from "./SelectionList";
 import FilterResults from "./FilterResults/FilterResults";
 import { genreList, cityList, placeList } from "../../utils";
 import { applyFilterToData } from "../../utils";
-import { concertsData } from "../../data";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import * as filterActions from "../../redux/filterSelect/filterSelect-actions";
 
 import "../MainFilter/MainFilter.scss";
 
@@ -14,25 +14,31 @@ const MainFilter = () => {
   const [filterValuePlace, setFilterValuePlace] = useState("");
   const [key, setKey] = useState(0);
 
-  const concerts = useSelector((state) => state.concerts.concerts);
+  // const concerts = useSelector((state) => state.concerts.concerts);
 
-  const filteredData = applyFilterToData(
-    concerts,
-    filterValueGenre,
-    filterValueCity,
-    filterValuePlace
-  );
+  // const filteredData = applyFilterToData(
+  //   concerts,
+  //   filterValueGenre,
+  //   filterValueCity,
+  //   filterValuePlace
+  // );
 
-  const resetFilteredData = () => {
-    setFilterValueGenre("");
-    setFilterValueCity("");
-    setFilterValuePlace("");
-    setKey(key + 3);
-  };
+  // const resetFilteredData = () => {
+  //   setFilterValueGenre("");
+  //   setFilterValueCity("");
+  //   setFilterValuePlace("");
+  //   setKey(key + 3);
+  // };
 
-  console.log("filteredData ==>", filteredData);
+  // console.log("filteredData ==>", filteredData);
 
-  console.log(filterValueGenre);
+  // console.log(filterValueGenre);
+
+  // const filterSelected = useSelector((state) => state.filter.filterSelected);
+
+  // console.log(filterSelected);
+
+  const dispacth = useDispatch();
 
   return (
     <div className="filter">
@@ -45,7 +51,7 @@ const MainFilter = () => {
           defaultValue={genreList[0]}
           onChange={(e) => setFilterValueGenre(e.value)}
           value={filterValueGenre}
-          key={key + 1}
+          // key={key + 1}
         />
         <SelectionList
           label="Ciudad"
@@ -55,7 +61,7 @@ const MainFilter = () => {
           defaultValue={cityList[0]}
           onChange={(e) => setFilterValueCity(e.value)}
           value={filterValueCity}
-          key={key + 2}
+          // key={key + 2}
         />
         <SelectionList
           label="Recinto"
@@ -65,20 +71,20 @@ const MainFilter = () => {
           defaultValue={placeList[0]}
           onChange={(e) => setFilterValuePlace(e.value)}
           value={filterValuePlace}
-          key={key + 3}
+          // key={key + 3}
         />
 
         <div className="filter__cleaner">
           <button
             className="filter__cleaner__btn"
             type="reset"
-            onClick={resetFilteredData}
+            // onClick={resetFilteredData}
           >
             <p className="filter__cleaner__text">Ver todos</p>
           </button>
         </div>
       </div>
-      <FilterResults filteredData={filteredData} />
+      <FilterResults />
     </div>
   );
 };
