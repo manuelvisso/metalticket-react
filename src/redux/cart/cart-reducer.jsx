@@ -1,10 +1,10 @@
 import {
-  ADD_TO_CART,
-  REMOVE_FROM_CART,
+  ADD_CART_ITEM,
+  REMOVE_CART_ITEM,
   TOGGLE_HIDDEN_CART,
 } from "./cart-actions";
 
-import { addItemToCart, removeItemFromCart } from "./cart-utils";
+import { addCartItem, removeCartItem } from "./cart-utils";
 
 const INITIAL_STATE = {
   cartItems: [],
@@ -13,16 +13,16 @@ const INITIAL_STATE = {
 
 const cartReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case ADD_TO_CART:
+    case ADD_CART_ITEM:
       return {
         ...state,
-        cartItems: addItemToCart(state.cartItems, action.payload),
+        cartItems: addCartItem(state.cartItems, action.payload),
       };
       break;
-    case REMOVE_FROM_CART:
+    case REMOVE_CART_ITEM:
       return {
         ...state,
-        cartItems: removeItemFromCart(state.cartItems, action.payload),
+        cartItems: removeCartItem(state.cartItems, action.payload),
       };
       break;
     case TOGGLE_HIDDEN_CART:
@@ -34,7 +34,7 @@ const cartReducer = (state = INITIAL_STATE, action) => {
       break;
 
     default:
-      break;
+      return state;
   }
 };
 

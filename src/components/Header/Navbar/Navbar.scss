@@ -13,12 +13,12 @@
     justify-content: center;
     & li {
       color: v.$light-orange;
+      cursor: pointer;
       & a {
         color: v.$light-orange;
         display: flex;
         align-items: center;
         justify-content: center;
-        cursor: pointer;
       }
     }
   }

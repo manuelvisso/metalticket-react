@@ -44,6 +44,7 @@ const FilterResults = () => {
             city={concert.city}
             date={concert.date}
             price={concert.price}
+            id={concert.id}
           />
         ))}
       </div>

@@ -1,8 +1,12 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import * as cartActions from "../../../redux/cart/cart-actions";
 
 import "../FilterResults/TicketCard.scss";
 
-const TicketCard = ({ img, artist, city, date, price }) => {
+const TicketCard = ({ img, artist, city, date, price, id }) => {
+  const dispatch = useDispatch();
+
   return (
     <div className="ticketCard">
       <article className="ticketCard__card">
@@ -15,7 +19,15 @@ const TicketCard = ({ img, artist, city, date, price }) => {
           <p className="ticketCard__card__date">{date}</p>
           <p className="ticketCard__card__price">${price}</p>
         </figcaption>
-        <button type="button" className="ticketCard__card__btn">
+        <button
+          type="button"
+          className="ticketCard__card__btn"
+          onClick={() =>
+            dispatch(
+              cartActions.addCartItem({ img, artist, city, date, price, id })
+            )
+          }
+        >
           Comprar Tickets
         </button>
       </article>

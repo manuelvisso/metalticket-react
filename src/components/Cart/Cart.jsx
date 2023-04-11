@@ -1,44 +1,38 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { AiOutlineClose } from "react-icons/ai";
-import { FiMinusSquare, FiPlusSquare, FiTrash2 } from "react-icons/fi";
-import Image from "../../assets/bg/hero__bg.jpg";
-
 import "../Cart/Cart.scss";
+import CartItem from "./CartItem";
+import * as cartActions from "../../redux/cart/cart-actions";
 
 const Cart = () => {
+  const { cartItems } = useSelector((state) => state.cart);
+
+  const dispatch = useDispatch();
+
+  const isCartHidden = useSelector((state) => state.cart.hidden);
+
   return (
-    <div className="cart">
-      <button className="cart__btn__close">
+    <div className={isCartHidden ? "cart cart__hidden" : "cart"}>
+      <button
+        className="cart__btn__close"
+        onClick={() => dispatch(cartActions.toggleHiddenCart())}
+      >
         <AiOutlineClose color="#ffbe5c" size="20px" />
       </button>
       <p className="cart__title">Carrito de compras</p>
-      <div className="cart__render__container">
-        <article className="cart__item">
-          <button className="cart__delete__btn">
-            <FiTrash2 color="#ffbe5c" size="20px" />
-          </button>
-          <div className="cart__item__img">
-            <img src={Image} alt="" />
-          </div>
-          <div className="cart__item__data">
-            <p className="cart__item__artist">Arch Enemy</p>
-            <p className="cart__item__city">Buenos Aires</p>
-            <p className="cart__item__date">21/11/2022</p>
-            <div className="cart__qty__container">
-              <button className="cart__qty__minus">
-                <FiMinusSquare color="#ffbe5c" size="20px" />
-              </button>
-              <p className="cart__qty">0</p>
-              <button className="cart__qty__plus">
-                <FiPlusSquare color="#ffbe5c" size="20px" />
-              </button>
-            </div>
-          </div>
-          <div>
-            <p className="cart__item__price">ARS 6000</p>
-          </div>
-        </article>
-      </div>
+
+      {cartItems.map((item) => (
+        <CartItem
+          key={item.id}
+          id={item.id}
+          img={item.img}
+          artist={item.artist}
+          date={item.date}
+          price={item.price}
+          qty={item.quantity}
+        />
+      ))}
 
       <div className="cart__pricing__container">
         <div className="cart__pricing__titles">

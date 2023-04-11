@@ -10,7 +10,7 @@ import "../Layout/Layout.scss";
 function Layout() {
   return (
     <div className="layout">
-      {/* <Cart /> */}
+      <Cart />
       <Header />
       <Hero />
       <MainFilter />

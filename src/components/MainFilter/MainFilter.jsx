@@ -33,8 +33,6 @@ const MainFilter = () => {
 
   const dispacth = useDispatch();
 
-  console.log(filterValueGenre);
-
   return (
     <div className="filter">
       <div className="filter__selection">
