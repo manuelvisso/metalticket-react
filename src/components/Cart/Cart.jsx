@@ -12,6 +12,14 @@ const Cart = () => {
 
   const isCartHidden = useSelector((state) => state.cart.hidden);
 
+  const subTotalAmount = cartItems.reduce((acc, item) => {
+    return (acc += item.price * item.quantity);
+  }, 0);
+
+  const serviceChargeAmount = subTotalAmount * 0.1;
+
+  const totalAmount = subTotalAmount + serviceChargeAmount;
+
   return (
     <div className={isCartHidden ? "cart cart__hidden" : "cart"}>
       <button
@@ -41,9 +49,11 @@ const Cart = () => {
           <p>Total:</p>
         </div>
         <div className="cart__pricing__amount">
-          <p className="cart__pricing__subtotal">ARS 0.00</p>
-          <small className="cart__pricing__charge">ARS 0.00</small>
-          <p className="cart__pricing__total">ARS 0.00</p>
+          <p className="cart__pricing__subtotal">ARS {subTotalAmount}</p>
+          <small className="cart__pricing__charge">
+            ARS {serviceChargeAmount}
+          </small>
+          <p className="cart__pricing__total">ARS {totalAmount}</p>
         </div>
       </div>
       <div className="cart__button__container">
