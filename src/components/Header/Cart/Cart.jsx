@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AiOutlineClose } from "react-icons/ai";
-import "../Cart/Cart.scss";
+import "./Cart.scss";
 import CartItem from "./CartItem";
-import * as cartActions from "../../redux/cart/cart-actions";
+import * as cartActions from "../../../redux/cart/cart-actions";
+import EmptyCartMsg from "../../UI/messages/EmptyCartMsg";
 
 const Cart = () => {
   const { cartItems } = useSelector((state) => state.cart);
@@ -20,6 +21,28 @@ const Cart = () => {
 
   const totalAmount = subTotalAmount + serviceChargeAmount;
 
+  const [showMessage, setShowMessage] = useState(false);
+
+  useEffect(() => {
+    if (cartItems.length === 0) {
+      setShowMessage(true);
+    } else {
+      setShowMessage(false);
+    }
+  }),
+    [cartItems];
+
+  useEffect(() => {
+    if (!isCartHidden) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isCartHidden]);
+
   return (
     <div className={isCartHidden ? "cart cart__hidden" : "cart"}>
       <button
@@ -29,7 +52,7 @@ const Cart = () => {
         <AiOutlineClose color="#ffbe5c" size="20px" />
       </button>
       <p className="cart__title">Carrito de compras</p>
-
+      {showMessage && <EmptyCartMsg />}
       {cartItems.map((item) => (
         <CartItem
           key={item.id}

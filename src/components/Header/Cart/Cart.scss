@@ -1,4 +1,4 @@
-@use "../../sass/variable" as v;
+@use "../../../sass/variable" as v;
 
 .cart {
   width: 400px;
@@ -8,7 +8,6 @@
   top: 0px;
   right: 0;
   background-color: #101010d9;
-  border: 1px solid v.$white;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -24,7 +23,7 @@
   }
   &__title {
     text-align: center;
-    font-size: v.$font-l;
+    font-size: 22px;
   }
   &__delete__btn {
     all: unset;

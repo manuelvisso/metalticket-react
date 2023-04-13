@@ -1,15 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { FiMinusSquare, FiPlusSquare, FiTrash2 } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
-import * as cartActions from "../../redux/cart/cart-actions";
+import * as cartActions from "../../../redux/cart/cart-actions";
 
-import "../Cart/Cart.scss";
+import "./Cart.scss";
 
 const CartItem = ({ img, artist, city, date, price, qty, id }) => {
   const dispatch = useDispatch();
 
   const { cartItems } = useSelector((state) => state.cart);
-  console.log(cartItems);
 
   const increaseQuantity = () =>
     dispatch(

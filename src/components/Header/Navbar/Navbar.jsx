@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import "../Navbar/Navbar.scss";
 import * as cartActions from "../../../redux/cart/cart-actions";
+import Cart from "../Cart/Cart";
 
 const Navbar = () => {
   //REVISAR LA OPTIMIZACIÓN DE ESTE CÓDIGO
@@ -18,6 +19,7 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
+      {!isCartHidden && <div className="overlay overlay__show"></div>}
       <ul>
         <li>
           <a>Inicio</a>
@@ -28,6 +30,7 @@ const Navbar = () => {
         <li>
           <a>Iniciar Sesión</a>
         </li>
+        <Cart />
         <li onClick={() => dispatch(cartActions.toggleHiddenCart())}>
           <FaShoppingCart size="20px" />
         </li>
