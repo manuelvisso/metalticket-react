@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import "../Navbar/Navbar.scss";
 import * as cartActions from "../../../redux/cart/cart-actions";
 import Cart from "../Cart/Cart";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   //REVISAR LA OPTIMIZACIÓN DE ESTE CÓDIGO
@@ -22,13 +23,13 @@ const Navbar = () => {
       {!isCartHidden && <div className="overlay overlay__show"></div>}
       <ul>
         <li>
-          <a>Inicio</a>
+          <Link to="/">Inicio</Link>
         </li>
         <li>
           <a>Eventos</a>
         </li>
         <li>
-          <a>Iniciar Sesión</a>
+          <Link to="/login">Iniciar Sesión</Link>
         </li>
         <Cart />
         <li onClick={() => dispatch(cartActions.toggleHiddenCart())}>
