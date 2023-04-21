@@ -69,12 +69,12 @@
     -moz-box-shadow: 1px 1px 24px 5px v.$black;
     z-index: 1;
     transition: all 0.2s ease-in-out;
+
+    color: v.$black;
+    font-size: v.$font-l;
+
     &:hover {
       transform: translateY(2px);
-    }
-    &__link {
-      color: v.$black;
-      font-size: v.$font-l;
     }
   }
 }
