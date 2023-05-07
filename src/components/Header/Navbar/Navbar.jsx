@@ -26,7 +26,7 @@ const Navbar = () => {
           <Link to="/">Inicio</Link>
         </li>
         <li>
-          <a>Eventos</a>
+          <Link to="/eventos">Eventos</Link>
         </li>
         <li>
           <Link to="/login">Iniciar Sesión</Link>

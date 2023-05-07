@@ -80,7 +80,9 @@ const Cart = () => {
         </div>
       </div>
       <div className="cart__button__container">
-        <button type="submit">Realizar Compra</button>
+        <button type="submit" disabled={cartItems.length === 0}>
+          Realizar Compra
+        </button>
       </div>
     </div>
   );

@@ -123,6 +123,14 @@
         transform: translateY(2px);
         background-color: v.$light-orange;
       }
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        transform: translateY(0px);
+        background-color: v.$gray;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+      }
     }
   }
 }
