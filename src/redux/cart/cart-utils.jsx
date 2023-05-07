@@ -20,7 +20,12 @@ export const subtractCartItem = (cartItems, ticket) => {
         ? { ...item, quantity: item.quantity - 1 }
         : item
     );
+  } else if (confirm("¿Desea eliminar este item del carrito?")) {
+    alert("El item se ha eliminado");
+  } else {
+    return cartItems;
   }
+
   return cartItems.filter((item) => item.id !== ticketInCart.id);
 };
 

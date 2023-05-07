@@ -23,7 +23,7 @@ const CartItem = ({ img, artist, city, date, price, qty, id }) => {
       })
     );
 
-  const decreaseQuantity = () =>
+  const decreaseQuantity = () => {
     dispatch(
       cartActions.subtractCartItem({
         img,
@@ -35,13 +35,17 @@ const CartItem = ({ img, artist, city, date, price, qty, id }) => {
         id,
       })
     );
+  };
 
   return (
     <div className="cart__render__container">
       <article className="cart__item">
         <button
           className="cart__delete__btn"
-          onClick={() => dispatch(cartActions.removeCartItem(id))}
+          onClick={() => {
+            if (confirm("¿Desea eliminar este item del carrito?"))
+              dispatch(cartActions.removeCartItem(id));
+          }}
         >
           <FiTrash2 color="#ffbe5c" size="20px" />
         </button>

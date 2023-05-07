@@ -1,5 +1,6 @@
 import {
   ADD_CART_ITEM,
+  CLEAR_CART_ITEMS,
   REMOVE_CART_ITEM,
   SUBTRACT_CART_ITEM,
   TOGGLE_HIDDEN_CART,
@@ -39,7 +40,13 @@ const cartReducer = (state = INITIAL_STATE, action) => {
       };
 
       break;
+    case CLEAR_CART_ITEMS:
+      return {
+        ...state,
+        cartItems: [],
+      };
 
+      break;
     default:
       return state;
   }

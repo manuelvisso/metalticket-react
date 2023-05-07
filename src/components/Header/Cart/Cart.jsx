@@ -80,7 +80,14 @@ const Cart = () => {
         </div>
       </div>
       <div className="cart__button__container">
-        <button type="submit" disabled={cartItems.length === 0}>
+        <button
+          type="submit"
+          disabled={cartItems.length === 0}
+          onClick={() => {
+            dispatch(cartActions.clearCartItems());
+            alert("Su compra ha sido realizada");
+          }}
+        >
           Realizar Compra
         </button>
       </div>

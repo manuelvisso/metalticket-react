@@ -22,11 +22,12 @@ const TicketCard = ({ img, artist, city, date, price, id }) => {
         <button
           type="button"
           className="ticketCard__card__btn"
-          onClick={() =>
+          onClick={() => {
             dispatch(
               cartActions.addCartItem({ img, artist, city, date, price, id })
-            )
-          }
+            );
+            alert("Se ha agregado un ticket al carrito");
+          }}
         >
           Comprar Tickets
         </button>
