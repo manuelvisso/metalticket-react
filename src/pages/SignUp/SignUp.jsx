@@ -17,7 +17,7 @@ const SignUp = () => {
           <img src={logo} alt="logo de www.metalticket.com" />
         </div>
         <div className="signup__form">
-          <div className="login__form__data">
+          <div className="signup__form__data">
             <label htmlFor="name"></label>
             <input type="text" name="name" id="name" placeholder="Nombre" />
             <label htmlFor="email"></label>
@@ -29,8 +29,6 @@ const SignUp = () => {
               id="password"
               placeholder="Establecer contraseña"
             />
-          </div>
-          <div className="login__form__data">
             <label htmlFor="Apellido"></label>
             <input
               type="text"

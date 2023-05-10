@@ -13,6 +13,7 @@
     align-items: center;
     flex-direction: column;
     gap: 20px;
+    padding: 0 25px 0 25px;
     backdrop-filter: brightness(0.5) grayscale(0.5);
   }
   &__logo {
@@ -24,14 +25,18 @@
   }
   &__form {
     display: flex;
-
     align-items: center;
     gap: 20px;
-
+    max-width: 600px;
     &__data {
       display: flex;
-      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
       gap: 25px;
+    }
+    & label {
+      display: none;
     }
     & input {
       border: unset;
@@ -44,6 +49,8 @@
       height: 30px;
       text-align: center;
       font-size: v.$font-l;
+      display: inline;
+      gap: 10px;
       &::placeholder {
         color: v.$light-orange;
       }
