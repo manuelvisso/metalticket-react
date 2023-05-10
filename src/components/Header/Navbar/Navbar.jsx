@@ -1,41 +1,53 @@
-import React from "react";
-import { FaShoppingCart } from "react-icons/fa";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
-import "../Navbar/Navbar.scss";
-import * as cartActions from "../../../redux/cart/cart-actions";
-import Cart from "../Cart/Cart";
+import React, { useState } from "react";
+import { FaShoppingCart, FaBars } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import Cart from "../Cart/Cart";
+import * as cartActions from "../../../redux/cart/cart-actions";
+import "../Navbar/Navbar.scss";
 
 const Navbar = () => {
   //REVISAR LA OPTIMIZACIÓN DE ESTE CÓDIGO
-
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
   const { cartItems } = useSelector((state) => state.cart);
-
   const dispatch = useDispatch();
-
   const isCartHidden = useSelector((state) => state.cart.hidden);
-
   //REVISAR LA OPTIMIZACIÓN DE ESTE CÓDIGO
+
+  const toggleHiddenMenu = () => {
+    setMenuIsOpen(!menuIsOpen);
+  };
 
   return (
     <div className="navbar">
       {!isCartHidden && <div className="overlay overlay__show"></div>}
-      <ul>
+      <div className="navbar__menuIcon" onClick={toggleHiddenMenu}>
+        <FaBars />
+      </div>
+      <ul className={`navbar__menu ${menuIsOpen ? "active" : ""}`}>
         <li>
-          <Link to="/">Inicio</Link>
+          <Link to="/" onClick={toggleHiddenMenu}>
+            Inicio
+          </Link>
         </li>
         <li>
-          <Link to="/eventos">Eventos</Link>
+          <Link to="/eventos" onClick={toggleHiddenMenu}>
+            Eventos
+          </Link>
         </li>
         <li>
-          <Link to="/login">Iniciar Sesión</Link>
-        </li>
-        <Cart />
-        <li onClick={() => dispatch(cartActions.toggleHiddenCart())}>
-          <FaShoppingCart size="20px" />
+          <Link to="/login" onClick={toggleHiddenMenu}>
+            Iniciar Sesión
+          </Link>
         </li>
       </ul>
+      <div
+        className="navbar__cartIcon"
+        onClick={() => dispatch(cartActions.toggleHiddenCart())}
+      >
+        <FaShoppingCart size="20px" />
+      </div>
+      <Cart />
     </div>
   );
 };

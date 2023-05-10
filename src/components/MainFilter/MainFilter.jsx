@@ -36,6 +36,7 @@ const MainFilter = () => {
   return (
     <div className="filter">
       <div className="filter__selection">
+        <p>Filtrar búsqueda</p>
         <SelectionList
           label="Géneros"
           name="genero"

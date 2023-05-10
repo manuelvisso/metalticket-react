@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  & ul {
+  &__menu {
     display: flex;
     gap: 20px;
     height: 90%;
@@ -20,6 +20,39 @@
         align-items: center;
         justify-content: center;
       }
+    }
+  }
+  &__cartIcon {
+    color: v.$light-orange;
+    cursor: pointer;
+  }
+  &__menuIcon {
+    display: none;
+    color: v.$light-orange;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .navbar {
+    &__menu {
+      display: none;
+      position: absolute;
+      top: 100px;
+      right: 0;
+      width: 100%;
+      height: auto;
+      flex-direction: column;
+      background-color: black;
+      border-radius: 0 0 10px 10px;
+      align-items: flex-end;
+      padding: 30px;
+      &.active {
+        display: flex;
+      }
+    }
+    &__menuIcon {
+      display: unset;
     }
   }
 }

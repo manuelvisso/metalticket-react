@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import TicketCard from "./TicketCard";
-
 import "../FilterResults/FilterResults.scss";
 import ErrorMsg from "../../UI/messages/ErrorMsg";
 
